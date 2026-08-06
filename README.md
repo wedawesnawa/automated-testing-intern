@@ -1,1 +1,1 @@
-![Demo GIF](/cypress/videos/1.mp4)
+![Demo GIF](/cypress/videos/1.gif)
