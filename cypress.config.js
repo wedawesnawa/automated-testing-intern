@@ -6,7 +6,7 @@ module.exports = defineConfig({
   // videoUploadOnPasses: false,
   e2e: {
     supportFile: 'cypress/support/index.js',
-    baseUrl: 'http://e-ticket-staging.sanatasystem.net',
+    baseUrl: 'yourURL',
     specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
   },
 });

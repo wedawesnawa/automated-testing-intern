@@ -8,20 +8,20 @@ describe('Modal Interaction and Form Submission Test', () => {
   before(() => {
     cy.request({
       method: 'POST',
-      url: 'https://dinkeshrportal.sanatasystem.net',
+      url: 'yourURL',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       body: {
-        username: 'Master',
-        password: 'Master-1234'
+        username: 'YourUsername',
+        password: 'YourPassword'
       },
       form: true 
     }).then((response) => {
       const token = response.body.token;
-      cy.visit('https://dinkeshrportal.sanatasystem.net');
-      cy.get('input[name="Input.Username"]').type('Master');
-      cy.get('input[name="Input.Password"]').type('Master-1234');
+      cy.visit('YourURL');
+      cy.get('input[name="Input.Username"]').type('YourUsername');
+      cy.get('input[name="Input.Password"]').type('YourPassword');
       cy.get('button[type="submit"]').first().click();
       cy.wait(2000);
       cy.get('ul.nav-sidebar a.nav-link').contains('Pegawai').click();
@@ -30,12 +30,12 @@ describe('Modal Interaction and Form Submission Test', () => {
   });
   it('should filter the table', () => {
     filterTable();
-    // cy.wait(2000);
-    // createEmployee();
-    // cy.wait(2000);
-    // editPegawai();
-    // cy.wait(2000);
-    // templateGajiPegawai();
+    cy.wait(2000);
+    createEmployee();
+    cy.wait(2000);
+    editPegawai();
+    cy.wait(2000);
+    templateGajiPegawai();
     cy.wait(2000);
     detailPegawai();
   
